@@ -1,0 +1,281 @@
+"-------------------------------------------------------------------------------
+"  ▄▄   ▄▄ ▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄ ▄▄▄     ▄▄   ▄▄ ▄▄▄▄▄▄▄
+" █  █ █  █   █  █▄█  █       █   █   █  █ █  █       █
+" █  █▄█  █   █       █    ▄  █   █   █  █ █  █   ▄▄▄▄█
+" █       █   █       █   █▄█ █   █   █  █▄█  █  █  ▄▄
+" █       █   █       █    ▄▄▄█   █▄▄▄█       █  █ █  █
+" █     █ █   █ ██▄██ █   █   █       █       █  █▄▄█ █
+"  █▄▄▄█  █▄▄▄█▄█   █▄█▄▄▄█   █▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█▄▄▄▄▄▄▄█
+"
+" Name: vimrc.plug
+" By: suabochica
+" Last Update: 20.MAY.2021
+"
+" Install vimplug running:
+"
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"-------------------------------------------------------------------------------
+"   1.0 Plugins list
+"-------------------------------------------------------------------------------
+call plug#begin('~/.vim/plugged')
+" [Emmet]: Completion tool to HTML, CSS and JavaScript via shorthand
+" expression
+Plug 'mattn/emmet-vim'
+" [Vim-markdown] Vim markdown runtime files
+Plug 'tpope/vim-markdown'
+
+" Typescript
+" -------------------------------------------------------------
+" [Typescript-Vim] Syntax file for ts.
+Plug 'leafgarland/typescript-vim'
+
+" JSX
+" -------------------------------------------------------------
+Plug 'yuezk/vim-js'
+"  [vim-jsx-pretty]: The React syntax highlighting and indenting plugin for vim
+Plug 'maxmellon/vim-jsx-pretty'
+
+" Git
+" -------------------------------------------------------------
+"  [vim-fugitive]: a git wrapper
+Plug 'tpope/vim-fugitive'
+"[vim-gitgutter] A Vim plugin which shows a git diff in the sign column.
+Plug 'airblade/vim-gitgutter'
+
+" Utils
+" -------------------------------------------------------------
+" [fzf]: Enable the Go To Anything to open a file instantly after typing a rough
+" representation of its name
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+" [NERDTree]: Display an interactive file tree view in a side panel
+Plug 'scrooloose/nerdtree'
+" [Commentary]: Comment stuff out
+Plug 'tpope/vim-commentary'
+" [Surround]: A graphical text editor to matching pair of characters
+Plug 'tpope/vim-surround'
+" [ALE]: (Asynchronous Lint Engine) is a comprehensive code analysis plugin for Vim.
+Plug 'w0rp/ale'
+" [Vim Multiple Cursors]: explained by itself
+Plug 'terryma/vim-multiple-cursors'
+" [Airline]: An enhacend status line
+Plug 'vim-airline/vim-airline'
+" [Goyo] Distraction free writing
+Plug 'junegunn/goyo.vim'
+" [auto-pairs] A Vim plugin will auto close those pesky brackets.
+Plug 'jiangmiao/auto-pairs'
+" [Vim-bookmarks] A plugin to add bookmarks in the code
+Plug 'MattesGroeger/vim-bookmarks'
+" [LanguageTool]: Spell checker for several languages
+Plug 'dpelle/vim-LanguageTool'
+" [Conquer of Completion] An intellisense engine.
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Theme
+" -------------------------------------------------------------
+" [ayu] color shceme
+Plug 'ayu-theme/ayu-vim' " or other package manager
+" [Gruvbox] theme
+Plug 'morhetz/gruvbox' " or other package manager
+call plug#end()
+
+" Applying color scheme
+" -------------------------------------------------------------
+set termguicolors
+set t_Co=256
+syntax on
+syntax enable
+
+if has('nvim')
+    tnoremap \<Esc> <C-\><C-n>
+    colorscheme ayu
+    let ayucolor="mirage" " for mirage version of theme
+else
+    colorscheme gruvbox
+endif
+
+set background=dark
+
+"-------------------------------------------------------------------------------
+"   2.0 NERDTree Tweaks
+"-------------------------------------------------------------------------------
+
+" Open NERDTree by default
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Making it prettier
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+map <C-a> :NERDTreeToggle<CR>
+
+":m     open menu
+
+"-------------------------------------------------------------------------------
+"   3.0 fzf(fuzzy finder) Tweaks
+"-------------------------------------------------------------------------------
+" Map fuzzy search to ;
+map <C-p> :Files<CR>
+" should install the silver searcher first
+" $ apt-get install silversearcher-ag
+nnoremap <C-o> :Ag<CR>
+
+"-------------------------------------------------------------------------------
+"   4.0 Surround
+"-------------------------------------------------------------------------------
+" cs"'          - Change surrounding characters
+" cst"          - Change surrounding character tag
+" ds"           - Delete surrounding character
+" ysiw]         - Add surrounding character
+" yss)          - Add surrounding paratheses`
+
+"-------------------------------------------------------------------------------
+"   5.0 ALE
+"-------------------------------------------------------------------------------
+" Fix file with prettier and the eslint
+let g:ale_fixers = {'javascript': ['prettier', 'eslint']}
+
+" Fix files when you save
+let g:ale_fix_on_save = 1
+
+" Enable completion where available
+let g:ale_completion_enabled = 1
+
+"-------------------------------------------------------------------------------
+"   6.0 Commentary
+"-------------------------------------------------------------------------------
+" gcc   - Comment line
+" gcap  - Comment paragraph
+
+"-------------------------------------------------------------------------------
+"   7.0 Vim Multiple Cursors
+"-------------------------------------------------------------------------------
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
+
+"-------------------------------------------------------------------------------
+"   8.0 Vim Bookmarks
+"-------------------------------------------------------------------------------
+
+nmap <Leader><Leader> <Plug>BookmarkToggle
+nmap <Leader>i <Plug>BookmarkAnnotate
+nmap <Leader>a <Plug>BoookmakrShowAll
+nmap <Leader>j <Plug>BoookmakrNext
+nmap <Leader>k <Plug>BoookmakrPrev
+nmap <Leader>c <Plug>BookmarkClear
+nmap <Leader>x <Plug>BoookmakrClearAll
+nmap <Leader>kk <Plug>BookmarkMoveUp
+nmap <Leader>jj <Plug>BookmarkMoveDown
+nmap <Leader>g <Plug>BookmarkMoveToLine
+
+"-------------------------------------------------------------------------------
+"   9.0 Fugitive
+"-------------------------------------------------------------------------------
+" :Git - :G
+" :Gcommit
+" :Gsatus
+" :Gdiff
+" :Gblame
+
+" map the git status
+nmap <leader>gs :Gstatus<CR>
+
+" map the git diff for solve conflicts
+nmap <leader>gf :diffget //3<CR>
+nmap <leader>gk :diffget //2<CR>
+
+"-------------------------------------------------------------------------------
+"   10.0 Goyo
+"-------------------------------------------------------------------------------
+nnoremap <C-z> :Goyo<CR>
+
+"-------------------------------------------------------------------------------
+"   11.0 Conquer of Completion
+"-------------------------------------------------------------------------------
+" Requirements:
+"   Run the `:checkhealth` command to validate the status of the configuration
+"   between nvim and the diferents programming languages.
+
+"   Install the nvim package to the respective programming language (e.g. for node):
+"   npm -g install nvim
+
+" :CocInstall coc-lists         - extension for basic list source for coc.nvim
+" :CocInstall coc-marketplace   - extension to enable the marketplace of coc.nvim
+" :CocList marketplace          - list of all the extensions for coc.nvim
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+
+
+"-------------------------------------------------------------------------------
+"   12.0 Airline
+"-------------------------------------------------------------------------------
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'jellybeans'
+let g:airline#extensions#tabline#enabled = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+highlight Comment cterm=italic gui=italic
+
+set laststatus=2
+
+
+"-------------------------------------------------------------------------------
+"   13.0 Brief Vim-plug Help
+"-------------------------------------------------------------------------------
+"
+" :PlugInstall      - install plugins; append `!` to update or just
+" :PlugUpdate
+" :PlugStatus       - check the status of plugins
+" :PlugUpdate       - install or update plugins the
+" :PlugUpgrade      - upgrade vun-plug itself
+" :PlugClean        - remove unlisted plugins
+"
+" see :h vim-plug for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line

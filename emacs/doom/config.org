@@ -1,0 +1,72 @@
+#+title: Config
+#+author: suabochica
+
+** Doom Directory
+
+- ~config.el~: Configuration file for doom emacs. Here I specify the ~doom-font~, ~doom-theme~ and some customize mappings.
+- ~config.org~: File to document the configurations and the package that I'm using for doom emacs.
+- ~init.el~: File that initialize doom with popular packages. You can enalbe or disalbe them.
+- ~package.el~: File to specify the use of packages that are in [[https://melpa.org][melpa]].
+
+** Neotree
+
+A Emacs tree plugin like NerdTree for Vim
+
+The next setup in the ~config.el~ file is to open neotree at the right:
+
+#+begin_src emacs-lisp
+(after! neotree
+  (setq neo-smart-open t
+        neo-window-fixed-size nil
+        neo-window-position (quote right)))
+#+end_src
+
+And below I associate the key combinations ~SPC t n~ for neotree:
+
+#+begin_src emacs-lisp
+(map! :leader
+      :desc "Toggle neotree file viewer" "t n" #'neotree-toggle
+      :desc "Open directory in neotree" "d n" #'neotree-dir)
+#+end_src
+
+NeoTree provides following themes: classic(default) ascii arrow icons nerd. Theme can be configured by setting neo-theme. For example, use icons for window system and arrow terminal.
+
+#+begin_src emacs-lisp
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+#+end_src
+
+#+begin_quote
+Note: For users who want to use the icons theme. Pls make sure you have installed the all-the-icons package and its fonts.
+#+end_quote
+
+** Org-auto-tangle
+
+This package allows you ro automatically tangle org files on save. This is done by adding the ~#+auto_tangle~ option in your org file.
+
+The tangling process happens asynchronously, so, it will not block your emacs session.
+
+
+#+begin_src emacs-lisp
+(use-package! org-auto-tangle
+  :defer t
+  :hook (org-mode . org-auto-tangle-mode)
+  :config
+  (set org-auto-tangle-defatult t)
+  )
+#+end_src
+
+** Org-reveal
+
+This package allows you to export ~.org~ files into RevealJS. Before use it, add the next setup in the ~config.el~ file:
+
+#+begin_src emacs-lisp
+;; ~/.doom.d/config.el
+(after! org
+  (load-library "ox-reveal")
+#+end_src
+
+Now to export from a ~org-file~  to RevealJS exceute the next steps:
+
+1. Specify the ~REVEAL_PROPERTIES~.
+2. Use the next keybindings ~SPC m e R B~ to export to RevealJS.
+3. After the first export you can use ~SPC m e R R~ to rewrite the existing html.

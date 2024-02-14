@@ -1,0 +1,24 @@
+{
+  "workbench.colorTheme": "Noctis Obscuro",
+  "workbench.colorCustomizations": {
+      "statusBar.background": "#e4b781",
+      "statusBar.foreground": "#2b2035"
+  },
+  "workbench.sideBar.location": "right",
+  // Font in MacOS
+  "editor.fontFamily": "JetBrains Mono NL, Monaco, 'Courier New', monospace",
+  // Font in Windows
+  // "editor.fontFamily": "Cascadia Mono NL, Monaco, 'Courier New', monospace",
+  // Font in Ubuntu
+  // "editor.fontFamily": "Firefox Mono NL, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.autofetch": true,
+  "terminal.integrated.env.osx": {},
+  "editor.fontSize": 14,
+  "diffEditor.wordWrap": "on",
+  "files.autoSave": "onFocusChange",
+  "workbench.iconTheme": "material-icon-theme"
+}
