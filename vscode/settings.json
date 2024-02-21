@@ -1,24 +1,53 @@
 {
-  "workbench.colorTheme": "Noctis Obscuro",
+  "workbench.colorTheme": "Noctis Minimus",
   "workbench.colorCustomizations": {
-      "statusBar.background": "#e4b781",
-      "statusBar.foreground": "#2b2035"
+    "statusBar.background": "#e4b781",
+    "statusBar.foreground": "#2b2035"
   },
   "workbench.sideBar.location": "right",
-  // Font in MacOS
-  "editor.fontFamily": "JetBrains Mono NL, Monaco, 'Courier New', monospace",
-  // Font in Windows
-  // "editor.fontFamily": "Cascadia Mono NL, Monaco, 'Courier New', monospace",
-  // Font in Ubuntu
-  // "editor.fontFamily": "Firefox Mono NL, Monaco, 'Courier New', monospace",
-  "editor.fontLigatures": true,
-  "[jsonc]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "workbench.iconTheme": "material-icon-theme",
+
   "git.autofetch": true,
+
   "terminal.integrated.env.osx": {},
-  "editor.fontSize": 14,
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "terminal.integrated.fontSize": 13,
+
   "diffEditor.wordWrap": "on",
-  "files.autoSave": "onFocusChange",
-  "workbench.iconTheme": "material-icon-theme"
+
+  "files.autoSave": "afterDelay",
+
+  "console-ninja.featureSet": "Community",
+
+  "debug.console.fontFamily": "FiraCode Nerd Font Mono",
+  "debug.console.fontSize": 13,
+  "debug.console.lineHeight": 1.2,
+
+  "editor.bracketPairColorization.enabled": true,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.experimental.asyncTokenization": true,
+  "editor.guides.bracketPairs": true,
+  "editor.lineNumbers": "relative",
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "Monolisa, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
+  "editor.stickyScroll.enabled": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb,.eslintrc.cjs,tsconfig.json,vite.config.ts,velociraptor.yml, .nvmrc, .editorconfig, .eslintrc.js, .prettierrc.js, jest.config.js"
+  }
 }
