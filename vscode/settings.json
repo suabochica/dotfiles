@@ -43,6 +43,8 @@
 
   "javascript.updateImportsOnFileMove.enabled": "always",
 
+  "keyboard.dispatch": "keyCode",
+
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
