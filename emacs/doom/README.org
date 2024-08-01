@@ -1,12 +1,19 @@
-#+title: Config
-#+author: suabochica
+#+title: REAMDE Config
+#+author: Sergio Benítez
 
 ** Doom Directory
 
 - ~config.el~: Configuration file for doom emacs. Here I specify the ~doom-font~, ~doom-theme~ and some customize mappings.
-- ~config.org~: File to document the configurations and the package that I'm using for doom emacs.
+- ~REAMDE.org~: File to document the configurations and the package that I'm using for doom emacs.
 - ~init.el~: File that initialize doom with popular packages. You can enalbe or disalbe them.
 - ~package.el~: File to specify the use of packages that are in [[https://melpa.org][melpa]].
+
+** Useful shortcuts
+
+- `SPC h r r`: to reload doom emacs
+- `SPC f p`: to open doom directory files.
+- `SPC g g`: open magit.
+- `g c c`: to comment/uncomment lines in ~.el~ files.
 
 ** Neotree
 
@@ -41,7 +48,7 @@ Note: For users who want to use the icons theme. Pls make sure you have installe
 
 ** Org-auto-tangle
 
-This package allows you ro automatically tangle org files on save. This is done by adding the ~#+auto_tangle~ option in your org file.
+This package allows you to automatically tangle org files on save. This is done by adding the ~#+auto_tangle~ option in your org file.
 
 The tangling process happens asynchronously, so, it will not block your emacs session.
 
