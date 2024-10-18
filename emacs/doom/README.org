@@ -10,10 +10,10 @@
 
 ** Useful shortcuts
 
-- `SPC h r r`: to reload doom emacs
-- `SPC f p`: to open doom directory files.
-- `SPC g g`: open magit.
-- `g c c`: to comment/uncomment lines in ~.el~ files.
+- ~SPC h r r~: to reload doom emacs
+- ~SPC f p~: to open doom directory files.
+- ~SPC g g~: open magit.
+- ~g c c~: to comment/uncomment lines in ~.el~ files.
 
 ** Neotree
 
