@@ -47,14 +47,22 @@
 
   "keyboard.dispatch": "keyCode",
 
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
-    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb,.eslintrc.cjs,tsconfig.json,vite.config.ts,velociraptor.yml, .nvmrc, .editorconfig, .eslintrc.js, .prettierrc.js, jest.config.js"
+    "package.json": "$(capture)*.json, $(capture)*.config.mjs, $(capture)*.config.cjs, $(capture)*.config.ts, .editorconfig, .prettierrc, .prettierignore, pnpm-lock.yaml, pnpm-workspace.yaml",
+    ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*"
   }
 }
