@@ -78,13 +78,16 @@
 (after! neotree
   (setq neo-smart-open t
         neo-window-fixed-size nil
-        neo-window-position (quote right)))
-
-(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+        neo-window-position (quote right)
+        neo-theme (if (display-graphic-p) 'icons 'arrow)))
 
 (map! :leader
-      :desc "Toggle neotree file viewer" "t n" #'neotree-toggle
-      :desc "Open directory in neotree" "d n" #'neotree-dir)
+      :desc "Toggle neotree file viewer" "d v" #'neotree-toggle
+      :desc "Refresh neotree buffer" "d g" #'neotree-refresh
+      :desc "Open directory in neotree" "d d" #'neotree-dir
+      :desc "Create a new empty file" "d n" #'dired-create-empty-file
+      :desc "Delete a file" "d n" #'delete-file
+      :desc "Open bash terminal" "o t" #'term)
 
 (after! org
   (load-library "ox-reveal"))

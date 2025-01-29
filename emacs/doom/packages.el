@@ -7,6 +7,11 @@
 
 (package! good-scroll)
 
+(package! all-the-icons)
+(package! nerd-icons)
+
+(package! exec-path-from-shell)
+
 (package! org-auto-tangle)
 (package! org-reveal)
 (package! ox-reveal)

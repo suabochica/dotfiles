@@ -8,12 +8,40 @@
 - ~init.el~: File that initialize doom with popular packages. You can enalbe or disalbe them.
 - ~package.el~: File to specify the use of packages that are in [[https://melpa.org][melpa]].
 
-** Useful shortcuts
+** Useful Shortcuts
 
 - ~SPC h r r~: to reload doom emacs
 - ~SPC f p~: to open doom directory files.
 - ~SPC g g~: open magit.
+- ~SPC o t~: open a bash terminal.
 - ~g c c~: to comment/uncomment lines in ~.el~ files.
+
+
+** Doom Doctor Warnings
+
+- x Couldn't find the `rg' binary; this a hard dependecy for Doom, file searches may not work at all
+
+#+BEGIN_SRC
+sudo apt install ripgrep
+#+END_SRC
+
+- ! Couldn't find the `fd' binary; project file searches will be slightly slower
+
+#+BEGIN_SRC
+sudo apt install fd-find
+#+END_SRC
+
+- ! Couldn't find a markdown compiler, `markdown-preview' won't work
+
+#+BEGIN_SRC
+sudo apt install pandoc
+#+END_SRC
+
+- ! Couldn't find shellcheck. Shell script linting will not work
+
+#+BEGIN_SRC
+sudo apt install shellcheck
+#+END_SRC
 
 ** Neotree
 
@@ -25,26 +53,24 @@ The next setup in the ~config.el~ file is to open neotree at the right:
 (after! neotree
   (setq neo-smart-open t
         neo-window-fixed-size nil
-        neo-window-position (quote right)))
+        neo-window-position (quote right)
+        neo-theme (if (display-graphic-p) 'icons 'arrow)))
 #+end_src
 
-And below I associate the key combinations ~SPC t n~ for neotree:
 
-#+begin_src emacs-lisp
-(map! :leader
-      :desc "Toggle neotree file viewer" "t n" #'neotree-toggle
-      :desc "Open directory in neotree" "d n" #'neotree-dir)
-#+end_src
-
-NeoTree provides following themes: classic(default) ascii arrow icons nerd. Theme can be configured by setting neo-theme. For example, use icons for window system and arrow terminal.
-
-#+begin_src emacs-lisp
-(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-#+end_src
+NeoTree provides following themes: classic(default) ascii arrow icons nerd. Theme can be configured by setting ~neo-theme~. For example, you use icons for window system and arrow terminal as indicates the last line of the previous snippet.
 
 #+begin_quote
 Note: For users who want to use the icons theme. Pls make sure you have installed the all-the-icons package and its fonts.
 #+end_quote
+
+And below I associate the key combinations ~SPC d v~ for neotree:
+
+#+begin_src emacs-lisp
+(map! :leader
+      :desc "Toggle neotree file viewer" "d v" #'neotree-toggle
+      :desc "Open directory in neotree" "d n" #'neotree-dir)
+#+end_src
 
 ** Org-auto-tangle
 
