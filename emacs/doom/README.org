@@ -19,25 +19,25 @@
 
 ** Doom Doctor Warnings
 
-- x Couldn't find the `rg' binary; this a hard dependecy for Doom, file searches may not work at all
+- x Couldn't find the ~rg~ binary; this a hard dependecy for Doom, file searches may not work at all
 
 #+BEGIN_SRC
 sudo apt install ripgrep
 #+END_SRC
 
-- ! Couldn't find the `fd' binary; project file searches will be slightly slower
+- ! Couldn't find the ~fd~ binary; project file searches will be slightly slower
 
 #+BEGIN_SRC
 sudo apt install fd-find
 #+END_SRC
 
-- ! Couldn't find a markdown compiler, `markdown-preview' won't work
+- ! Couldn't find a markdown compiler, ~markdown-preview~ won't work
 
 #+BEGIN_SRC
 sudo apt install pandoc
 #+END_SRC
 
-- ! Couldn't find shellcheck. Shell script linting will not work
+- ! Couldn't find ~shellcheck~. Shell script linting will not work
 
 #+BEGIN_SRC
 sudo apt install shellcheck
