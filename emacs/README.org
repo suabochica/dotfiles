@@ -1,0 +1,26 @@
+#+title: Emacs config
+#+author: Sergio Benítez
+
+This file specifies the set up that I use over Emacs to use the next 2 distros on it:
+
+1. Spacemacs
+2. Doom Emacs
+
+I create the next directory to store the different Emacs distros:
+
+#+begin_src bash
+mkdir ~/emacs-distros/*
+#+end_src:
+
+To run spacemacs:
+
+#+begin_src bash
+emacs --init-dir ~/emacs-distros/spacemacs
+#+end_src:
+
+To run doom emacs:
+
+#+begin_src bash
+emacs --init-dir ~/emacs-distros/doom
+#+end_src
+

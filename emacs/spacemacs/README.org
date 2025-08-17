@@ -1,0 +1,20 @@
+#+title: Spacemacs config
+#+author: Sergio Benítez
+
+** Spacemacs
+
+This file recopiles the common flows and the set up that I use with spacemacs.
+
+** Spacemacs directory
+
+- ~REAMDE.org~: File to document the configurations and the package that I'm using for spaceemacs.
+- ~.spacemacs~: Configuration file for spacemacs. Here I specify the ~dotspacemacs-*~, variables.
+
+** Useful Shortcuts
+
+- ~SPC h r r~: to reload doom emacs
+- ~SPC f e d~: to open ~.spacemacs~ file.
+- ~SPC g m~: open magit.
+- ~SPC T F~: open spacemacs full screen.
+- ~SPC p t~: open project tree.
+

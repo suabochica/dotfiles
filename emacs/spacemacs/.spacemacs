@@ -73,25 +73,25 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     
+
      (javascript :variables
-       javascript-backend 'lsp
-       javascript-import-tool 'import-js
-       javascript-fmt-tool 'prettier)
-     typescript    
+                 javascript-backend 'lsp
+                 javascript-import-tool 'import-js
+                 javascript-fmt-tool 'prettier)
+     typescript
      )
-   
+
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in 'dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(drag-stuff atom-one-dark-theme)
+   dotspacemacs-additional-packages '(drag-stuff doom-themes)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(
-     org-projectile
-   )
+                                    org-projectile
+                                    )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -164,7 +164,7 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    ;; add jazz
-   dotspacemacs-themes '(atom-one-dark)
+   dotspacemacs-themes '(doom-ayu-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -350,56 +350,56 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (drag-stuff-mode t)
   (global-set-key (kbd "<C-S-up>") 'drag-stuff-up)
   (global-set-key (kbd "<C-S-down>") 'drag-stuff-down)
-)
+  )
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
 This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(evil-want-Y-yank-to-eol nil)
- '(hl-todo-keyword-faces
-   (quote
-    (("TODO" . "#dc752f")
-     ("PROGRESS" . "#4f97d7")
-     ("DONE" . "#86dc2f")
-     ("DISCARD" . "#b1951d"))))
- '(org-agenda-files
-   (quote
-    ("/mnt/c/Users/suabochica/Google Drive/sua.org")))
- '(package-selected-packages
-   (quote
-    (yaml-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async)))
- '(pdf-view-midnight-colors (quote ("#b2b2b2" . "#292b2e"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(evil-want-Y-yank-to-eol nil)
+   '(hl-todo-keyword-faces
+     (quote
+      (("TODO" . "#dc752f")
+       ("PROGRESS" . "#4f97d7")
+       ("DONE" . "#86dc2f")
+       ("DISCARD" . "#b1951d"))))
+   '(org-agenda-files
+     (quote
+      ("/mnt/c/Users/suabochica/Google Drive/sua.org")))
+   '(package-selected-packages
+     (quote
+      (yaml-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async)))
+   '(pdf-view-midnight-colors (quote ("#b2b2b2" . "#292b2e"))))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+  )
 
 ;; Define JetBrains Mono ligatures
 (defconst jetbrains-ligature-mode--ligatures
-   '("-->" "//" "/**" "/*" "*/" "<!--" ":=" "->>" "<<-" "->" "<-"
-     "<=>" "==" "!=" "<=" ">=" "=:=" "!==" "&&" "||" "..." ".."
-     "|||" "///" "&&&" "===" "++" "--" "=>" "|>" "<|" "||>" "<||"
-     "|||>" "<|||" ">>" "<<" "::=" "|]" "[|" "{|" "|}"
-     "[<" ">]" ":?>" ":?" "/=" "[||]" "!!" "?:" "?." "::"
-     "+++" "??" "###" "##" ":::" "####" ".?" "?=" "=!=" "<|>"
-     "<:" ":<" ":>" ">:" "<>" "***" ";;" "/==" ".=" ".-" "__"
-     "=/=" "<-<" "<<<" ">>>" "<=<" "<<=" "<==" "<==>" "==>" "=>>"
-     ">=>" ">>=" ">>-" ">-" "<~>" "-<" "-<<" "=<<" "---" "<-|"
-     "<=|" "/\\" "\\/" "|=>" "|~>" "<~~" "<~" "~~" "~~>" "~>"
-     "<$>" "<$" "$>" "<+>" "<+" "+>" "<*>" "<*" "*>" "</>" "</" "/>"
-     "<->" "..<" "~=" "~-" "-~" "~@" "^=" "-|" "_|_" "|-" "||-"
-     "|=" "||=" "#{" "#[" "]#" "#(" "#?" "#_" "#_(" "#:" "#!" "#="
-     "&="))
+  '("-->" "//" "/**" "/*" "*/" "<!--" ":=" "->>" "<<-" "->" "<-"
+    "<=>" "==" "!=" "<=" ">=" "=:=" "!==" "&&" "||" "..." ".."
+    "|||" "///" "&&&" "===" "++" "--" "=>" "|>" "<|" "||>" "<||"
+    "|||>" "<|||" ">>" "<<" "::=" "|]" "[|" "{|" "|}"
+    "[<" ">]" ":?>" ":?" "/=" "[||]" "!!" "?:" "?." "::"
+    "+++" "??" "###" "##" ":::" "####" ".?" "?=" "=!=" "<|>"
+    "<:" ":<" ":>" ">:" "<>" "***" ";;" "/==" ".=" ".-" "__"
+    "=/=" "<-<" "<<<" ">>>" "<=<" "<<=" "<==" "<==>" "==>" "=>>"
+    ">=>" ">>=" ">>-" ">-" "<~>" "-<" "-<<" "=<<" "---" "<-|"
+    "<=|" "/\\" "\\/" "|=>" "|~>" "<~~" "<~" "~~" "~~>" "~>"
+    "<$>" "<$" "$>" "<+>" "<+" "+>" "<*>" "<*" "*>" "</>" "</" "/>"
+    "<->" "..<" "~=" "~-" "-~" "~@" "^=" "-|" "_|_" "|-" "||-"
+    "|=" "||=" "#{" "#[" "]#" "#(" "#?" "#_" "#_(" "#:" "#!" "#="
+    "&="))
 
 (dolist (pat jetbrains-ligature-mode--ligatures)
   (set-char-table-range composition-function-table
