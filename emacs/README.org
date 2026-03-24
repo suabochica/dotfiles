@@ -1,26 +1,75 @@
-#+title: Emacs config
+#+title: ☀️ Emacs configuration
 #+author: Sergio Benítez
 
-This file specifies the set up that I use over Emacs to use the next 2 distros on it:
+First, install [[https://www.gnu.org/software/emacs/download.html][Emacs v29]] on the OS. GNU Emacs is an extensible, customizable, free text editor.
 
-1. Spacemacs
-2. Doom Emacs
-
-I create the next directory to store the different Emacs distros:
+For Ubuntu/Pop OS please run:
 
 #+begin_src bash
-mkdir ~/emacs-distros/*
-#+end_src:
-
-To run spacemacs:
-
-#+begin_src bash
-emacs --init-dir ~/emacs-distros/spacemacs
-#+end_src:
-
-To run doom emacs:
-
-#+begin_src bash
-emacs --init-dir ~/emacs-distros/doom
+sudo apt get install emacs
 #+end_src
 
+For Mac OS please use Homebrew and run:
+
+#+begin_src bash
+brew install emacs
+#+end_src
+
+This file specifies the set up that I use over Emacs to use the next 2 distributions on it:
+
+1. [[https://www.spacemacs.org][Spacemacs]]
+2. [[https://www.github.com/doomemacs/doomemacs][Doom Emacs]]
+
+I create the next directory to store the different Emacs distributions:
+
+#+begin_src bash
+mkdir ~/emacsdis
+#+end_src
+
+** ⭐ Spacemacs
+
+First, inside ~/emacsdis~ folder create a ~/spacemacs~ folder:
+
+#+begin_src bash
+mkdir ~/emacsdis/spacemacs
+#+end_src
+
+Then, clone the Spacemacs GitHub repository in the ~/spacemacs~ folder:
+
+#+begin_src bash
+git clone https://github.com/syl20bnr/spacemacs ~/emacsdis/spacemacs
+#+end_src
+
+Finally, run Spacemacs:
+
+#+begin_src bash
+emacs --init-dir ~/emacsdis/spacemacs
+#+end_src
+
+Follow the installation instructions and I recommend use the ~spacemacs-base~ set up.
+
+** ⭐ Doom
+
+First, inside ~/emacsdis~ folder create a ~/doom~ folder:
+
+#+begin_src bash
+mkdir ~/emacsdis/doom
+#+end_src
+
+Then, clone the Doom GitHub repository in the ~/doom~ folder:
+
+#+begin_src bash
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/emacsdis/doom
+#+end_src
+
+Next, install Doom Emacs running the next command:
+
+#+begin_src bash
+~/emacsdis/doom install
+#+end_src
+
+Finally, to run Doom Emacs:
+
+#+begin_src bash
+emacs --init-dir ~/emacsdis/doom
+#+end_src
