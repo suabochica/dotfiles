@@ -14,7 +14,7 @@
   name = Sergio L. Benítez D.
   email = sergio.kun21@gmail.com
 [core]
-  editor = /usr/local/bin/vim
+  editor = /usr/local/bin/nvim
 [color]
   ui = true
 [alias]
