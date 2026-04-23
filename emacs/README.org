@@ -37,7 +37,7 @@ mkdir ~/emacsdis/spacemacs
 Then, clone the Spacemacs GitHub repository in the ~/spacemacs~ folder:
 
 #+begin_src bash
-git clone https://github.com/syl20bnr/spacemacs ~/emacsdis/spacemacs
+git clone https://github.com/syl20bnr/spacemacs --depth 1 ~/emacsdis/spacemacs
 #+end_src
 
 Finally, run Spacemacs:
@@ -65,7 +65,7 @@ git clone --depth 1 https://github.com/doomemacs/doomemacs ~/emacsdis/doom
 Next, install Doom Emacs running the next command:
 
 #+begin_src bash
-~/emacsdis/doom install
+~/emacsdis/doom/bin/doom  install
 #+end_src
 
 Finally, to run Doom Emacs:
