@@ -1,6 +1,15 @@
+// Set up the get the best from VSCode shortcuts + Vim plugin
 [
   {
     "key": "shift shift",
-    "command": "workbench.action.quickOpen"
-  }
+    "command": "workbench.action.quickOpen",
+  },
+  {
+    "key": "ctrl+alt+j",
+    "command": "workbench.action.togglePanel",
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "editor.action.addSelectionToNextFindMatch",
+  },
 ]
