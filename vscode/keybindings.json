@@ -1,6 +1,10 @@
 // Set up the get the best from VSCode shortcuts + Vim plugin
 [
   {
+    "key": "meta+b",
+    "command": "workbench.action.toggleSidebarVisibility",
+  },
+  {
     "key": "shift shift",
     "command": "workbench.action.quickOpen",
   },
