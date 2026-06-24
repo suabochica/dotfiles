@@ -1,3 +1,4 @@
+;; Last update: 23 June, 2026
 ;; -*- mode: emacs-lisp -*-
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
@@ -41,9 +42,8 @@ values."
      ;; ----------------------------------------------------------------
      ;; syntax-checking
      auto-completion
-     html
-     yaml
      better-defaults
+     distraction-free
 
      emacs-lisp
      emoji
@@ -52,7 +52,6 @@ values."
      (helm :variables
            helm-no-header t
            helm-position 'top)
-     markdown
      (org :variables
           org-enable-hugo-support t
           org-enable-reveal-js-support t)
@@ -65,7 +64,7 @@ values."
                treemacs-lock-width t
                treemacs-use-git-mode 'deferred
                treemacs-use-filewatch-mode t)
-     (docker :variables docker-dockerfile-backend 'lsp)
+     ;;(docker :variables docker-dockerfile-backend 'lsp)
      (ranger :variables
              ranger-show-preview t)
      (spell-checking :variables spell-checking-enable-by-default nil)
@@ -74,11 +73,11 @@ values."
             shell-default-height 30
             shell-default-position 'bottom)
 
-     (javascript :variables
-                 javascript-backend 'lsp
-                 javascript-import-tool 'import-js
-                 javascript-fmt-tool 'prettier)
-     typescript
+     ;;(javascript :variables
+     ;;            javascript-backend 'lsp
+     ;;            javascript-import-tool 'import-js
+     ;;            javascript-fmt-tool 'prettier)
+     ;;typescript
      )
 
    ;; List of additional packages that will be installed without being
@@ -89,9 +88,7 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(
-                                    org-projectile
-                                    )
+   dotspacemacs-excluded-packages '(org-projectile)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -169,7 +166,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("JetBrains Mono"
+   dotspacemacs-default-font '("MonoLisa Script"
                                :size 14
                                :weight normal
                                :width normal
@@ -383,28 +380,3 @@ This function is called at the very end of Spacemacs initialization."
    ;; If there is more than one, they won't work right.
    )
   )
-
-;; Define JetBrains Mono ligatures
-(defconst jetbrains-ligature-mode--ligatures
-  '("-->" "//" "/**" "/*" "*/" "<!--" ":=" "->>" "<<-" "->" "<-"
-    "<=>" "==" "!=" "<=" ">=" "=:=" "!==" "&&" "||" "..." ".."
-    "|||" "///" "&&&" "===" "++" "--" "=>" "|>" "<|" "||>" "<||"
-    "|||>" "<|||" ">>" "<<" "::=" "|]" "[|" "{|" "|}"
-    "[<" ">]" ":?>" ":?" "/=" "[||]" "!!" "?:" "?." "::"
-    "+++" "??" "###" "##" ":::" "####" ".?" "?=" "=!=" "<|>"
-    "<:" ":<" ":>" ">:" "<>" "***" ";;" "/==" ".=" ".-" "__"
-    "=/=" "<-<" "<<<" ">>>" "<=<" "<<=" "<==" "<==>" "==>" "=>>"
-    ">=>" ">>=" ">>-" ">-" "<~>" "-<" "-<<" "=<<" "---" "<-|"
-    "<=|" "/\\" "\\/" "|=>" "|~>" "<~~" "<~" "~~" "~~>" "~>"
-    "<$>" "<$" "$>" "<+>" "<+" "+>" "<*>" "<*" "*>" "</>" "</" "/>"
-    "<->" "..<" "~=" "~-" "-~" "~@" "^=" "-|" "_|_" "|-" "||-"
-    "|=" "||=" "#{" "#[" "]#" "#(" "#?" "#_" "#_(" "#:" "#!" "#="
-    "&="))
-
-(dolist (pat jetbrains-ligature-mode--ligatures)
-  (set-char-table-range composition-function-table
-                        (aref pat 0)
-                        (nconc (char-table-range composition-function-table (aref pat 0))
-                               (list (vector (regexp-quote pat)
-                                             0
-                                             'compose-gstring-for-graphic)))))
