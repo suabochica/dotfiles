@@ -12,9 +12,20 @@ This file recopiles the common flows and the set up that I use with spacemacs.
 
 ** Useful Shortcuts
 
+Shortcuts related to ~.spacemacs~ actions.
+
 - ~SPC f e R~: to reload ~.spacemacs~ file.
 - ~SPC f e d~: to open ~.spacemacs~ file.
+
+Shortcut to open magit:
+
 - ~SPC g m~: open magit.
+
+Shortcuts relate to project and windows:
+
 - ~SPC T F~: open spacemacs full screen.
 - ~SPC p t~: open project tree.
 
+
+- ~SPC w C~: to toggle full center distraction free.
+- ~SPC t l~: to toggle visual-line truncate.
