@@ -132,3 +132,10 @@ alias finder_hide_hidden='defaults write com.apple.finder ShowAllFiles FALSE'
 
 # showa: To remind the established alias
 showa () { /usr/bin/grep --color=always -i -a1 $@ ~/.bash_aliases | grep -v '^\s*$' | less -FSRXc ; }
+
+#-------------------------------------------------------------------------------
+# 8.0 Emacs
+#-------------------------------------------------------------------------------
+
+alias spacemacs="emacs --init-dir ~/emacsdis/spacemacs"
+alias doom="emacs --init-dir ~/emacsdis/doom"
