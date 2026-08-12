@@ -11,7 +11,13 @@ I store a basic Vim setup for text file edition:
 
 Neovim is preferred over Vim for its modern architecture, featuring native LSP (Language Server Protocol) support for IDE-like code intelligence, faster asynchronous plugin execution using Lua, and Treesitter for superior syntax highlighting. It boasts "saner" default settings, an active community-driven development model, and a booming ecosystem of modern plugins
 
-I suggest use [LazyVim](https://www.lazyvim.org/). LazyVim is a Neovim setup powered by 💤 lazy.nvim to make it easy to customize and extend your config.
+First, install the latest version of `nvim` running the next command on Ubuntu:
+
+```sh
+sudo snap install nvim --classic
+```
+
+Then, I suggest use [LazyVim](https://www.lazyvim.org/). LazyVim is a Neovim setup powered by 💤 lazy.nvim to make it easy to customize and extend your config.
 
 ### ✨ Features
 
