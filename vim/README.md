@@ -29,7 +29,12 @@ Then, I suggest use [LazyVim](https://www.lazyvim.org/). LazyVim is a Neovim set
 
 ### 🔌 Plugins
 
-To add plugins, navigate to `~/.config/nvim/lua/plugins` and add the plug in. For example to add the `alexghergh/nvim-tmux-navigation` plugin to navigate between neovim and tmux with Ctrl + Vim Navigation keys, create the file `nvim-tmux-navigation.lua` with the next content:
+List of plugins I use for LazyVim:
+
+- [nvim-tmux-navigation](https://github.com/alexghergh/nvim-tmux-navigation)
+- [nvim-orgmode/orgmode](https://github.com/nvim-orgmode/orgmode)
+
+To add plugins, navigate to `~/.config/nvim/lua/plugins` and add it. For example, I use the `alexghergh/nvim-tmux-navigation` plugin to navigate between neovim and tmux with `Ctrl + VimNavigationKeys` and it requires the next set up create the file `nvim-tmux-navigation.lua` with the next content:
 
 ```lua
 return {
@@ -49,6 +54,26 @@ return {
         next = "<C-Space>",
       },
     })
+  end,
+}
+```
+
+Set up for 'nvim-orgmode/orgmode'.
+
+```lua
+return {
+  'nvim-orgmode/orgmode',
+  event = 'VeryLazy',
+  ft = { 'org' },
+  config = function()
+    -- Setup orgmode
+    require('orgmode').setup({
+      org_agenda_files = '~/orgfiles/**/*',
+      org_default_notes_file = '~/orgfiles/refile.org',
+    })
+
+    -- Experimental LSP support
+    vim.lsp.enable('org')
   end,
 }
 ```
