@@ -26,3 +26,29 @@ Then, I suggest use [LazyVim](https://www.lazyvim.org/). LazyVim is a Neovim set
 - 🚀 Blazingly fast
 - 🧹 Sane default settings for options, autocmds, and keymaps
 - 📦 Comes with a wealth of plugins pre-configured and ready to use
+
+### 🔌 Plugins
+
+To add plugins, navigate to `~/.config/nvim/lua/plugins` and add the plug in. For example to add the `alexghergh/nvim-tmux-navigation` plugin to navigate between neovim and tmux with Ctrl + Vim Navigation keys, create the file `nvim-tmux-navigation.lua` with the next content:
+
+```lua
+return {
+  "alexghergh/nvim-tmux-navigation",
+  event = "VeryLazy",
+  config = function()
+    local nvim_tmux_nav = require("nvim-tmux-navigation")
+    nvim_tmux_nav.setup({
+      disable_when_zoomed = true,
+      -- defaults to false
+      keybindings = {
+        left = "<C-h>",
+        down = "<C-j>",
+        up = "<C-k>",
+        right = "<C-l>",
+        last_active = "<C-\\>",
+        next = "<C-Space>",
+      },
+    })
+  end,
+}
+```
