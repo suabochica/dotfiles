@@ -43,3 +43,17 @@ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 Then, reload tmux if it is already started with `prefix + r`
 
 Finally, launch tmux and hit `I` (capital i) to fetch any plugins
+
+## Screenshots
+
+tmux session with multiple windows (`bash`, `reactnd`, `htop`) and split panes running Neovim and a terminal side by side:
+
+![tmux session with multiple windows and split panes](images/01-tmux.webp)
+
+`htop` running in its own tmux window:
+
+![htop running in a tmux window](images/02-tmux.webp)
+
+tmux session with Neovim and a terminal split, using the custom status bar:
+
+![tmux session with Neovim and terminal split panes](images/03-tmux.webp)
