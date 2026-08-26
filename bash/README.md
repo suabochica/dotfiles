@@ -13,7 +13,7 @@ Bash (Bourne Again Shell) is a Unix shell and command interpreter, serving as th
 
 ## General Best Practices
 
-- Source .bashrc from .bash_profile: To ensure consistency across all shells, most users include a snippet in their .bash_profile to source the .bashrc file. This makes aliases and functions available in both login and non-login shells. A common snippet is:
+- Source `.bashrc` from `.bash_profile`: To ensure consistency across all shells, most users include a snippet in their `.bash_profile` to source the `.bashrc` file. This makes aliases and functions available in both login and non-login shells. A common snippet is:
 
 ```sh
 if [ -f ~/.bashrc ]; then
@@ -21,7 +21,7 @@ if [ -f ~/.bashrc ]; then
 fi
 ```
 
-- **Backup files**: Always create a backup before making major changes. A simple command for this is cp ~/.bashrc ~/.bashrc.bak.
+- **Backup files**: Always create a backup before making major changes. A simple command for this is `cp ~/.bashrc ~/.bashrc.bak`.
 - **Use comments and organization**: Group configurations into logical sections (e.g., # Aliases, # Functions) and use comments (#) to explain the code's purpose.
 - **Avoid sensitive data**: Never store passwords or API keys directly in these files. Use secure vaults or environment variables managed by a secure system instead.
 - **Test changes safely**: Before sourcing a changed file in your current session, open a new terminal window to test the configuration. If something is broken, you can exit the new terminal and fix the issue in your original, working shell.
