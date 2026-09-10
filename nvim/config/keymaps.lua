@@ -1,0 +1,6 @@
+vim.keymap.set("v", "(", "c(<ESC>pa)")
+vim.keymap.set("v", "[", "c[<ESC>pa]")
+vim.keymap.set("v", "{", "c{<ESC>pa}")
+vim.keymap.set("v", "'", "c'<ESC>pa'")
+vim.keymap.set("v", '"', 'c"<ESC>pa"')
+vim.keymap.set("v", "`", "c`<ESC>pa`")
