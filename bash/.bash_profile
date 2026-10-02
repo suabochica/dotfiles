@@ -40,13 +40,18 @@ YELLOWBOLD="\[\033[1;33m\]"
 BLUE="\[\033[0;34m\]"
 BLUEBOLD="\[\033[1;34m\]"
 RESETCOLOR="\[\e[00m\]"
-
 #-------------------------------------------------------------------------------
-# 2.0 Environment variables
+# 4.0 Environment variables
 #-------------------------------------------------------------------------------
 
-export USER_LOCAL=/usr/local/bin
-export BINARIES=/usr/bin:/bin:/usr/sbin:/sbin
+export USER_LOCAL="/usr/local/bin"
+PATH="$USER_LOCAL:$PATH"
+
+export USER_LOCAL_HIDE="$HOME/.local/bin"
+PATH="$USER_LOCAL_HIDE:$PATH"
+
+export BINARIES="/usr/bin:/bin:/usr/sbin:/sbin"
+PATH="$BINARIES:$PATH"
 
 #JAVA_HOME=$(/usr/libexec/java_home)
 #export JAVA_HOME
@@ -63,33 +68,83 @@ export BINARIES=/usr/bin:/bin:/usr/sbin:/sbin
 #SCALA=$SCALA_HOME/bin
 #export SCALA
 
-# export ANDROID_HOME=/Users/suabochica/Library/Android/sdk/
-# export NODE=/Users/suabochica/.nvm/versions/node/v12.6.0/bin/node
-# export NPM=/Users/suabochica/.nvm/versions/node/v12.6.0/bin/npm
-# export PYTHON=/usr/bin/python
-
-PATH=$PATH:$USER_LOCAL
-PATH=$PATH:$BINARIES
 # PATH=$PATH:$ANDROID_HOME
 # PATH=$PATH:$NODE
 # PATH=$PATH:$NPM
 # PATH=$PATH:$PYTHON
-#PATH=$PATH:$M2
-#PATH=$PATH:$SCALA
-
-export PATH
-
-# Set default edit (NeoVim)
-export EDITOR=/usr/bin/nvim
-
-# Set default blocksize for ls, df, du
-# ref: http://hints.macworld.com/comment.php?mode=view&cid=24491
-export BLOCKSIZE=1k
+# PATH=$PATH:$M2
+# PATH=$PATH:$SCALA
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 #export SDKMAN_DIR="$HOME/.sdkman"
 #[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# 4.1 nvm
+#--------
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# 4.2 node and npm
+#--------
+export NODE="$HOME/.nvm/versions/node/v25.9.0/bin/node"
+PATH="$NODE:$PATH"
+
+export NPM="$HOME/.nvm/versions/node/v25.9.0/bin/npm"
+PATH="$NPM:$PATH"
+
+# 4.3 pnpm
+#--------
+
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+case ":$PATH:" in
+*":$PNPM_HOME/bin:"*) ;;
+*) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+
+# 4.4 deno
+#--------
+
+export DENO="$HOME/.deno/env"
+PATH="$DENO:$PATH"
+
+# 4.5 bun
+#--------
+export BUN_INSTALL="$HOME/.bun"
+PATH="$BUN_INSTALL/bin:$PATH"
+
+# 4.6 pyenv
+#--------
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+
+# 4.7 console-ninja
+#--------
+
+export CONSOLE_NINJA="$HOME/.console-ninja/.bin"
+PATH="$CONSOLE_NINJA:$PATH"
+
+# 4.8 doom emacs
+#--------
+
+export EMACS="$HOME/.emacs.d/bin"
+PATH="$EMACS:$PATH"
+
+# 4.9 Neovim
+#---------
+
+export NVIM="/opt/nvim/"
+PATH="$NVIM:$PATH"
+
+# 4.10 opencode
+#---------
+export OPENCODE="$HOME/.opencode/bin/"
+PATH="$OPENCODE:$PATH"
